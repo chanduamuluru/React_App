@@ -4,7 +4,9 @@ import { connect } from "react-redux";
 
 const Alert = ({ alerts }) => {
   return (
-    alerts !== null && alerts.length > 0 && alerts.map(alerts => <div></div>)
+    alerts !== null &&
+    alerts.length > 0 &&
+    alerts.map(alerts => <div key={alerts}></div>)
   );
 };
 
