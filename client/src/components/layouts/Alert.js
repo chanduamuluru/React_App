@@ -6,7 +6,11 @@ const Alert = ({ alerts }) => {
   return (
     alerts !== null &&
     alerts.length > 0 &&
-    alerts.map(alerts => <div key={alerts}></div>)
+    alerts.map(alert => (
+      <div key={alert.id} className={`alert alert-${alert.alertType}`}>
+        {alert.msg}
+      </div>
+    ))
   );
 };
 
@@ -18,4 +22,4 @@ const mapStateToProps = state => ({
   alerts: state.alert
 });
 
-export default alert;
+export default connect(mapStateToProps)(Alert);
